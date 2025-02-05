@@ -1,0 +1,50 @@
+{
+  "name": "solana-mcp-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "solana-rpc": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\""
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/solana-mcp-server.git"
+  },
+  "homepage": "https://github.com/yourusername/solana-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/solana-mcp-server/issues"
+  },
+  "contributors": [
+    {
+      "name": "Alex Cheng",
+      "email": "alexanderkcheng@gmail.com",
+      "url": "https://github.com/akc2267"
+    }
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.4.1",
+    "@solana/web3.js": "^1.87.6",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  }
+}
