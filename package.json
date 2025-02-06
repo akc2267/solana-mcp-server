@@ -4,25 +4,32 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "solana-rpc": "./build/index.js"
+    "solana-mcp": "./build/index.js"
   },
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\""
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc && chmod +x build/index.js",
+    "start": "node build/index.js"
   },
   "files": [
     "build"
   ],
-  "keywords": [],
+  "keywords": [
+    "solana",
+    "mcp",
+    "rpc",
+    "blockchain"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Solana RPC Model-Context-Protocol Server",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/solana-mcp-server.git"
+    "url": "https://github.com/akc2267/solana-mcp-server.git"
   },
-  "homepage": "https://github.com/yourusername/solana-mcp-server#readme",
+  "homepage": "https://github.com/akc2267/solana-mcp-server#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/solana-mcp-server/issues"
+    "url": "https://github.com/akc2267/solana-mcp-server/issues"
   },
   "contributors": [
     {
@@ -41,6 +48,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.1",
     "@solana/web3.js": "^1.87.6",
+    "bs58": "^5.0.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
